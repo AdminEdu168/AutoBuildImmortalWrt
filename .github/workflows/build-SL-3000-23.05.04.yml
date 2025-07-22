@@ -1,4 +1,4 @@
-name: build-gl-inet-23.05.4 ImmortalWrt
+name: build-sl-3000-23.05.4 ImmortalWrt
 
 on:
   workflow_dispatch:
