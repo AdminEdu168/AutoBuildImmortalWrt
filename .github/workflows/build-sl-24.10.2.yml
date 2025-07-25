@@ -1,4 +1,4 @@
-name: build-司络-SL-24.10.2 ImmortalWrt
+name: build-SL-3000-24.10.2 ImmortalWrt
 on:
   workflow_dispatch:
     inputs:
@@ -13,7 +13,7 @@ on:
         description: |
           是否编译 Docker 插件
         required: true
-        default: 'no'
+        default: 'yes'
         type: choice
         options:
           - 'yes'
@@ -55,19 +55,14 @@ jobs:
             fi
           fi    
 
-      - name: Build Gl-iNet ImmortalWrt 24.10.2
+      - name: Build SL-3000 ImmortalWrt 24.10.2
         run: |
           profiles="${{ github.event.inputs.profile }}"
           include_docker="${{ github.event.inputs.include_docker }}"
-    
-          if [ "$profiles" = "glinet_gl-b2200" ]; then
-            tag=ipq40xx-generic-openwrt-24.10.2
-            echo "platform=ipq40xx/generic" >> $GITHUB_ENV
-          else
-            tag=mediatek-filogic-openwrt-24.10.2
-            echo "platform=mediatek/filogic" >> $GITHUB_ENV
-          fi
           
+          tag=mediatek-filogic-openwrt-24.10.2
+          echo "platform=mediatek/filogic" >> $GITHUB_ENV
+
           IFS=',' read -r -a profile_array <<< "$profiles"
           
           for profile in "${profile_array[@]}"; do
@@ -108,8 +103,8 @@ jobs:
       - name: Upload ImmortalWrt as release assets
         uses: softprops/action-gh-release@v2.2.1
         with:
-          tag_name: Autobuild-GL-iNet
-          name: ImmortalWrt-GL-iNet
+          tag_name: Autobuild-SL-3000
+          name: ImmortalWrt-SL-3000
           body_path: ${{ github.workspace }}/mediatek-filogic/info.md
           files: |
             ${{ github.workspace }}/*.bin
