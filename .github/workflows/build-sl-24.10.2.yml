@@ -1,4 +1,4 @@
-name: build-sl-24.10.2
+name: build-sl-24.10.2 ImmortalWrt
 on:
   workflow_dispatch:
     inputs:
