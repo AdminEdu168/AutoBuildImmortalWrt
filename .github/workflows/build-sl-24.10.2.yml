@@ -1,4 +1,4 @@
-name: build-sl-24.10.2 ImmortalWrt
+name: build-司络-SL-24.10.2 ImmortalWrt
 on:
   workflow_dispatch:
     inputs:
@@ -7,8 +7,8 @@ on:
         description: "请选择路由器型号"
         required: true
         options:
-          - sl-3000
-        default: sl-3000
+          - SL-3000
+        default: SL-3000
       include_docker:
         description: |
           是否编译 Docker 插件
