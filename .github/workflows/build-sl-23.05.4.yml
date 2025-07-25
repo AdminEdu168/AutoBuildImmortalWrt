@@ -1,4 +1,4 @@
-name: build-司络-SL-23.05.4 ImmortalWrt
+name: build-SL-3000-23.05.4 ImmortalWrt
 
 on:
   workflow_dispatch:
