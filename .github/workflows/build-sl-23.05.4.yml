@@ -1,4 +1,4 @@
-name: build-sl-23.05.4 ImmortalWrt
+name: build-司络-SL-23.05.4 ImmortalWrt
 
 on:
   workflow_dispatch:
@@ -8,11 +8,8 @@ on:
         description: "请选择路由器型号"
         required: true
         options:
-          - glinet_gl-mt3000
-          - glinet_gl-mt2500
-          - glinet_gl-mt6000
-          - glinet_gl-b2200
-        default: glinet_gl-mt6000
+          - SL-3000
+        default: SL-3000
       include_docker:
         description: |
           是否编译 Docker 插件
